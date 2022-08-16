@@ -20,6 +20,39 @@ public class SpaceGame {
         /*terminal.setCursorPosition(40, 25);*/
 
         terminal.putCharacter(Symbols.TRIANGLE_UP_POINTING_BLACK);
+        //Obstacles obstacles = new Obstacles();
+
+      //  obstacles.obstaclesMethod();
+
+        Obstacles barrier=new Obstacles();
+        for (Place p : barrier.obstacleMethod(7,7)) {
+
+            terminal.setCursorPosition(p.x, p.y);
+            terminal.putCharacter(barrier.block);
+            terminal.flush();
+        }
+        Obstacles barrier1=new Obstacles();
+        for (Place p : barrier1.obstacleMethod(45,10)) {
+
+            terminal.setCursorPosition(p.x, p.y);
+            terminal.putCharacter(barrier.block);
+            terminal.flush();
+        }
+        Obstacles barrier2=new Obstacles();
+        for (Place p : barrier2.obstacleMethod(25,15)) {
+
+            terminal.setCursorPosition(p.x, p.y);
+            terminal.putCharacter(barrier.block);
+            terminal.flush();
+        }
+        Obstacles barrier3=new Obstacles();
+        for (Place p : barrier3.obstacleMethod(35,20)) {
+
+            terminal.setCursorPosition(p.x, p.y);
+            terminal.putCharacter(barrier.block);
+            terminal.flush();
+        }
+
 
        
         KeyStroke latestKeyStroke = null;
@@ -48,6 +81,8 @@ public class SpaceGame {
 
         }
 
+
+
     }
 
 
@@ -69,6 +104,7 @@ public class SpaceGame {
                 break;
 
         }
+
         terminal.setCursorPosition(oldPosition.x, oldPosition.y);
         terminal.putCharacter(' ');
 
