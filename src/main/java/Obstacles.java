@@ -1,8 +1,13 @@
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 
+import javax.swing.*;
+import java.awt.*;
+
 public class Obstacles {
-    int x = 5;
+
+
+  int x = 5;
     int y = 5;
     final char block = '\u2588';
 

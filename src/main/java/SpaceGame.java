@@ -1,9 +1,12 @@
 import com.googlecode.lanterna.Symbols;
+import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 
+import javax.swing.*;
 import javax.swing.text.Position;
+import java.awt.*;
 
 
 public class SpaceGame {
@@ -12,6 +15,7 @@ public class SpaceGame {
 
         DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory();
         Terminal terminal = terminalFactory.createTerminal();
+        terminal.getTerminalSize();
         terminal.setCursorVisible(false);
 
         Place place = new Place(40, 25);
@@ -20,11 +24,15 @@ public class SpaceGame {
         /*terminal.setCursorPosition(40, 25);*/
 
         terminal.putCharacter(Symbols.TRIANGLE_UP_POINTING_BLACK);
-        //Obstacles obstacles = new Obstacles();
 
-      //  obstacles.obstaclesMethod();
 
-        Obstacles barrier=new Obstacles();
+
+
+      //Obstacles obstacles = new Obstacles();
+
+     // obstacles.obstaclesMethod();
+
+    Obstacles barrier=new Obstacles();
         for (Place p : barrier.obstacleMethod(7,7)) {
 
             terminal.setCursorPosition(p.x, p.y);
@@ -32,21 +40,21 @@ public class SpaceGame {
             terminal.flush();
         }
         Obstacles barrier1=new Obstacles();
-        for (Place p : barrier1.obstacleMethod(45,10)) {
+        for (Place p : barrier1.obstacleMethod(45,45)) {
 
             terminal.setCursorPosition(p.x, p.y);
             terminal.putCharacter(barrier.block);
             terminal.flush();
         }
         Obstacles barrier2=new Obstacles();
-        for (Place p : barrier2.obstacleMethod(25,15)) {
+        for (Place p : barrier2.obstacleMethod(25,25)) {
 
             terminal.setCursorPosition(p.x, p.y);
             terminal.putCharacter(barrier.block);
             terminal.flush();
         }
         Obstacles barrier3=new Obstacles();
-        for (Place p : barrier3.obstacleMethod(35,20)) {
+        for (Place p : barrier3.obstacleMethod(35,35)) {
 
             terminal.setCursorPosition(p.x, p.y);
             terminal.putCharacter(barrier.block);
@@ -110,6 +118,8 @@ public class SpaceGame {
 
         terminal.setCursorPosition(spaceShip.x, spaceShip.y);
         terminal.putCharacter(Symbols.TRIANGLE_UP_POINTING_BLACK);
+
+
 
         terminal.flush();
     }
